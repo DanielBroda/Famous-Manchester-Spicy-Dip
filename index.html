@@ -119,7 +119,7 @@ const reviews = [
   { name: "Roosters", location: "Altrincham", area: "Altrincham", rating: 6.4, google: 3.4, desc: "A local stop for me but only had the burger when I've been drinking. Size is quite small and spicy sauce isn't that spicy. Average bun and not much lettuce or mayo. Fine but plenty out there are much better.", update: null, rereviewed: false, asterisk: false, img: "Fried Chicken JPEGs/processed/Roosters 2.jpg", imgHeight: "680px" },
   { name: "BRD Fried Chicken", location: "Chorlton", area: "Chorlton", rating: 5.0, google: 4.5, desc: "Visually it looked great but chicken was breaded as opposed to being battered and resulted in a strange mouthfeel, was very spicy too.", update: null, rereviewed: false, asterisk: false, img: "Fried Chicken JPEGs/processed/BRD Fried Chicken.jpg" },
 ];
-const sorted = [...reviews].sort((a, b) => b.rating - a.rating);
+const sorted = [...reviews].sort((a, b) => b.rating - a.rating || b.google - a.google);
 function renderReviews(data) {
   const list = document.getElementById('reviews-list');
   const noResults = document.getElementById('no-results');
